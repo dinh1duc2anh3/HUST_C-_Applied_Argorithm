@@ -3,26 +3,26 @@ using namespace std;
 
 #define MAX 100005
 
-int n;
-int a[MAX];
-int res;
+long long n;
+long long a[MAX];
+long long res;
 
 void input(){
     cin >> n;
-    for (int i=0; i<n; i ++){
+    for (long long i=0; i<n; i ++){
         cin >> a[i];
     }
 }
 
 void solve(){
-    int cnt =0;
-    for (int i =0; i <n; i ++){
+    long long cnt =0;
+    for (long long i =0; i <n; i ++){
         if (a[i]< a[i-1] ) cnt ++;
     }
     res = cnt;
 }
 
-int main(){
+long long main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL);
     input();
     solve();

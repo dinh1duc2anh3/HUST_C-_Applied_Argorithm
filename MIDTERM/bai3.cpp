@@ -6,10 +6,10 @@ using namespace std;
 
 #define MAX 20
 
-int n;
+long long n;
 bool visited[MAX];
-int x[MAX]; 
-int cnt;
+long long x[MAX]; 
+long long cnt;
 //	x[0] = H, x[1] = U, x[2] = S, x[3] = T
 //  x[4] = O, x[5] = I, x[6] = C 
 
@@ -17,31 +17,31 @@ int cnt;
 void input(){
     cin >> n;
     
-    for (int i=0; i<MAX; i++){
+    for (long long i=0; i<MAX; i++){
     	visited[i] = false;
 	}
 	cnt =0;
 
 }
 
-bool check(int a, int i) {
+bool check(long long a, long long i) {
     if (a == 0 && i == 0) return false; // x[0] không du?c là 0
     if (a == 2 && i == 0) return false; // x[2] không du?c là 0
     if (visited[i]) return false; // i dã du?c s? d?ng
     return true;
 }
 
-int solution(){
-	int hust = x[0] * 1000 + x[1]*100 + x[2]*10 + x[3];
-	int soict = x[2]*10000 + x[4]*1000 + x[5]*100 + x[6]*10 + x[3];
+long long solution(){
+	long long hust = x[0] * 1000 + x[1]*100 + x[2]*10 + x[3];
+	long long soict = x[2]*10000 + x[4]*1000 + x[5]*100 + x[6]*10 + x[3];
 	
 	if (hust + soict == n){
 		cnt++;
 	}
 }
 
-void TRY(int a){
-	for (int i=0; i<10; i++){
+void TRY(long long a){
+	for (long long i=0; i<10; i++){
 		if (check(a,i)){
 			visited[i] = true;
 			x[a] = i;
@@ -55,9 +55,9 @@ void TRY(int a){
 	}
 }
 
-int main(){
+long long main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL);
-    int T;
+    long long T;
     cin >> T;
     
     while (T>0){
