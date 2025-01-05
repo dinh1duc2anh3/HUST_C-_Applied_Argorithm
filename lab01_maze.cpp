@@ -8,8 +8,7 @@ using namespace std;
 int dx[] = {-1,1,0,0};
 int dy[] = {0,0,-1,1};
 
-
-bool is_valid(int x, int y, int n, int m, const vector<vector<int>> &maze,const vector<vector<bool>> &visited ){
+bool is_valid(int x, int y, int n, int m, const vector<vector<int>> &maze , const vector<vector<bool>> &visited ){
     return (x >= 0 && x < n && y >=0 && y < m && !visited[x][y]&& maze[x][y] == 0);
 }
 
